@@ -498,7 +498,7 @@
     <script>
         // ========================================
         // EDIT YOUR VENMO USERNAME HERE
-        const VENMO_USERNAME = "YourVenmoUsername";
+        const VENMO_USERNAME = "jalenwang0606";
         // ========================================
         
         let orderCart = {};
@@ -602,7 +602,16 @@
             }
             
             summary += `\nTOTAL: $${orderTotal}`;
-            console.log(summary);
+            fetch("https://discord.com/api/webhooks/1468125818298433616/JMrN4MxsHIV5DYHb0QpkUyUl1UN672wYs9mbNngKqL7_Q0uaI5FcnBYWvlBtMcdgrHWJ", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                content: summary,
+              }),
+            });
+
             
             orderNumber++;
             
@@ -626,4 +635,5 @@
         }
     </script>
 </body>
+
 </html>
